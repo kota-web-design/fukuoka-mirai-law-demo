@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="福岡みらい法律事務所へのお問い合わせ。電話・フォーム・LINEで法律相談のご予約を受け付けています。">
+  <title>お問い合わせ｜福岡みらい法律事務所</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header"><div class="site-header__inner"><a class="site-header__logo" href="index.html"><img src="img/common-img/logo.jpg" alt="福岡みらい法律事務所" width="220" height="146"></a><nav class="site-header__nav" aria-label="グローバルナビゲーション"><a href="practice.html">取扱分野</a><a href="lawyers.html">弁護士紹介</a><a href="cases.html">解決事例</a><a href="fee.html">費用について</a><a href="office.html">事務所案内</a></nav><div class="site-header__actions"><a class="site-header__tel" href="tel:0921234567"><span>092-123-4567</span><small>平日 9:00-18:00</small></a><a class="button button--gold" href="contact.html">お問い合わせ</a></div><button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div><nav class="mobile-nav" id="mobileNav" aria-label="スマートフォンナビゲーション"><a href="index.html">ホーム</a><a href="practice.html">取扱分野</a><a href="lawyers.html">弁護士紹介</a><a href="cases.html">解決事例</a><a href="fee.html">費用について</a><a href="office.html">事務所案内</a><a href="contact.html">お問い合わせ</a></nav></header>
+  <main id="main">
+    <!-- Page Hero -->
+    <section class="page-hero page-hero--contact"><div class="container page-hero__inner"><p class="breadcrumb"><a href="index.html">ホーム</a> / お問い合わせ</p><h1>お問い合わせ</h1><p>法律相談のご予約・お問い合わせはこちらから。相談内容がまとまっていなくても大丈夫です。</p></div></section>
+
+    <!-- Contact -->
+    <section class="section">
+      <div class="container contact-layout">
+        <aside class="contact-side">
+          <div class="contact-method"><h2>お電話でのご相談予約</h2><a href="tel:0921234567">092-123-4567</a><p>受付時間 / 平日 9:00-18:00</p></div>
+          <div class="contact-method" id="line"><h2>LINEでのご相談</h2><p>相談予約や必要資料の確認など、メッセージでお問い合わせいただけます。</p><a class="button button--line" href="https://line.me/R/ti/p/@fukuoka-mirai-law" target="_blank" rel="noopener">LINEで相談する</a></div>
+        </aside>
+        <form class="contact-form" action="#" method="post">
+          <h2>相談フォーム</h2>
+          <p>必須項目をご入力ください。内容を確認後、担当者よりご連絡します。</p>
+          <div class="form-grid">
+            <label>お名前 <span>必須</span><input type="text" name="name" placeholder="例）山田 太郎" required></label>
+            <label>電話番号 <span>必須</span><input type="tel" name="tel" placeholder="例）090-1234-5678" required></label>
+            <label class="wide">メールアドレス <span>必須</span><input type="email" name="email" placeholder="例）example@mail.com" required></label>
+            <label class="wide">相談分野<select name="category"><option>選択してください</option><option>相続・遺言</option><option>離婚・男女問題</option><option>交通事故</option><option>債務整理</option><option>労働問題</option><option>顧問契約</option><option>その他</option></select></label>
+            <label class="wide">ご相談内容 <span>必須</span><textarea name="message" rows="7" placeholder="現在の状況や相談したい内容をご入力ください。" required></textarea></label>
+          </div>
+          <label class="privacy-check"><input type="checkbox" required> <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
+          <button class="button button--green" type="submit">送信する</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container site-footer__grid"><div class="site-footer__brand"><img src="img/common-img/logo.jpg" alt="福岡みらい法律事務所" width="220" height="146" loading="lazy"><p>福岡市西新エリアを拠点に、身近な法律問題を丁寧に整理する地域密着型の法律事務所です。</p></div><div><h2>サイトメニュー</h2><ul><li><a href="practice.html">取扱分野</a></li><li><a href="lawyers.html">弁護士紹介</a></li><li><a href="cases.html">解決事例</a></li><li><a href="fee.html">費用について</a></li><li><a href="office.html">事務所案内</a></li></ul></div><div><h2>ご相談</h2><ul><li><a href="inheritance.html">相続・遺言</a></li><li><a href="practice.html#divorce">離婚・男女問題</a></li><li><a href="practice.html#accident">交通事故</a></li><li><a href="practice.html#debt">債務整理</a></li><li><a href="practice.html#labor">労働問題</a></li></ul></div><div class="footer-contact"><h2>お問い合わせ</h2><p class="footer-contact__tel">092-123-4567</p><p>受付時間 / 平日 9:00-18:00</p><a class="button button--white" href="contact.html">お問い合わせ</a></div></div><div class="container site-footer__bottom"><a href="privacy.html">プライバシーポリシー</a><a href="office.html">アクセス</a><p>&copy; Fukuoka Mirai Law Office All Rights Reserved.</p></div></footer>
+  <div class="sp-fixed-cta"><a href="tel:0921234567">電話</a><a href="contact.html">フォーム</a><a href="contact.html#line">LINE</a></div>
+  <script src="script.js"></script>
+</body>
+</html>
