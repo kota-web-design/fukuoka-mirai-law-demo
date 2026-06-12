@@ -105,6 +105,10 @@ button {
   max-width: 880px;
 }
 
+.sp-only {
+  display: none;
+}
+
 /* =========================================================
   Buttons / Links
 ========================================================= */
@@ -314,8 +318,8 @@ button {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(248, 248, 244, 0.98) 0%, rgba(248, 248, 244, 0.9) 40%, rgba(248, 248, 244, 0.54) 62%, rgba(248, 248, 244, 0.18) 100%),
-    url("img/top-img/hero.jpg") center right / cover no-repeat;
+    linear-gradient(90deg, rgba(248, 248, 244, 1) 0%, rgba(248, 248, 244, 0.99) 42%, rgba(248, 248, 244, 0.68) 64%, rgba(248, 248, 244, 0.18) 100%),
+    url("img/top-img/hero.jpg") 68% center / cover no-repeat;
 }
 
 .hero__inner {
@@ -829,26 +833,50 @@ button {
   min-height: 330px;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(248, 248, 244, 0.96) 0%, rgba(248, 248, 244, 0.88) 48%, rgba(248, 248, 244, 0.28) 100%),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80") center/cover;
+    linear-gradient(90deg, rgba(248, 248, 244, 0.96) 0%, rgba(248, 248, 244, 0.86) 46%, rgba(248, 248, 244, 0.3) 100%),
+    url("img/office-img/office_hero.jpg") center right / cover no-repeat;
 }
 
 .page-hero--practice {
-  background-image:
-    linear-gradient(90deg, rgba(248, 248, 244, 0.96) 0%, rgba(248, 248, 244, 0.9) 48%, rgba(248, 248, 244, 0.32) 100%),
-    url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80");
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.97) 0%, rgba(248, 248, 244, 0.88) 44%, rgba(248, 248, 244, 0.34) 100%),
+    url("img/practice-img/practice_hero.jpg") center right / cover no-repeat;
 }
 
 .page-hero--inheritance {
-  background-image:
-    linear-gradient(90deg, rgba(248, 248, 244, 0.96) 0%, rgba(248, 248, 244, 0.88) 48%, rgba(248, 248, 244, 0.32) 100%),
-    url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80");
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.97) 0%, rgba(248, 248, 244, 0.88) 44%, rgba(248, 248, 244, 0.34) 100%),
+    url("img/practice-img/practice_hero.jpg") center right / cover no-repeat;
+}
+
+.page-hero--lawyers {
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.97) 0%, rgba(248, 248, 244, 0.88) 45%, rgba(248, 248, 244, 0.28) 100%),
+    url("img/lawyers-img/lawyers_hero.jpg") center right / cover no-repeat;
+}
+
+.page-hero--cases {
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.97) 0%, rgba(248, 248, 244, 0.88) 44%, rgba(248, 248, 244, 0.34) 100%),
+    url("img/cases-img/cases_hero.jpg") center right / cover no-repeat;
+}
+
+.page-hero--fee {
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.97) 0%, rgba(248, 248, 244, 0.88) 44%, rgba(248, 248, 244, 0.34) 100%),
+    url("img/fee-img/fee_hero.jpg") center right / cover no-repeat;
+}
+
+.page-hero--office {
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.98) 0%, rgba(248, 248, 244, 0.9) 44%, rgba(248, 248, 244, 0.38) 100%),
+    url("img/office-img/office_hero.jpg") center right / cover no-repeat;
 }
 
 .page-hero--contact {
-  background-image:
-    linear-gradient(90deg, rgba(248, 248, 244, 0.96) 0%, rgba(248, 248, 244, 0.9) 48%, rgba(248, 248, 244, 0.3) 100%),
-    url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80");
+  background:
+    linear-gradient(90deg, rgba(248, 248, 244, 0.98) 0%, rgba(248, 248, 244, 0.9) 44%, rgba(248, 248, 244, 0.38) 100%),
+    url("img/office-img/office_hero.jpg") center right / cover no-repeat;
 }
 
 .page-hero__inner {
@@ -942,12 +970,20 @@ button {
   align-items: center;
 }
 
-.rounded-image,
-.office-photo {
+.rounded-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+.office-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  object-position: right center;
   box-shadow: var(--shadow-sm);
 }
 
@@ -1499,18 +1535,57 @@ textarea {
     padding: 64px 0;
   }
 
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(248, 248, 244, 0.9) 0%, rgba(248, 248, 244, 0.94) 52%, rgba(248, 248, 244, 0.99) 100%),
+      url("img/top-img/hero.jpg") 70% center / cover no-repeat;
+  }
+
   .hero__inner {
     gap: 28px;
-    padding: 28px 0 56px;
+    min-height: 560px;
+    padding: 48px 0 56px;
     text-align: center;
   }
 
+  .hero__content {
+    width: 100%;
+    min-width: 0;
+  }
+
   .hero h1 {
-    font-size: clamp(34px, 10vw, 46px);
+    max-width: 100%;
+    font-size: clamp(28px, 7.4vw, 32px);
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+  }
+
+  .sp-only {
+    display: block;
+  }
+
+  .section-heading h2,
+  .strength-lead h2,
+  .page-hero h1,
+  .cta-band h2,
+  .cta-panel h2 {
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+  }
+
+  .section-heading h2,
+  .strength-lead h2,
+  .cta-band h2,
+  .cta-panel h2 {
+    font-size: clamp(25px, 6.8vw, 30px);
   }
 
   .hero__text {
     margin-inline: auto;
+    max-width: 330px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
   }
 
   .hero__buttons {
@@ -1640,7 +1715,16 @@ textarea {
     background-position: center;
   }
 
+  .page-hero::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(248, 248, 244, 0.82) 0%, rgba(248, 248, 244, 0.94) 100%);
+    content: "";
+  }
+
   .page-hero__inner {
+    position: relative;
+    z-index: 1;
     text-align: center;
   }
 
