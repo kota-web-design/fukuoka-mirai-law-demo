@@ -318,15 +318,15 @@ button {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(248, 248, 244, 0.92) 0%, rgba(248, 248, 244, 0.82) 36%, rgba(248, 248, 244, 0.42) 58%, rgba(248, 248, 244, 0.1) 100%),
-    url("img/top-img/hero.jpg") right center / auto 100% no-repeat;
+    linear-gradient(90deg, rgba(248, 248, 244, 0.97) 0%, rgba(248, 248, 244, 0.88) 30%, rgba(248, 248, 244, 0.4) 54%, rgba(248, 248, 244, 0.08) 82%),
+    url("img/top-img/hero.jpg") center center / cover no-repeat;
 }
 
 .hero__inner {
   position: relative;
   display: flex;
   align-items: center;
-  width: min(calc(100% - 48px), 1240px);
+  width: min(calc(100% - 96px), 1240px);
   min-height: 640px;
   margin-inline: auto;
   padding: 82px 0;
@@ -342,7 +342,7 @@ button {
 .hero h1 {
   margin: 0;
   font-family: "Noto Serif JP", serif;
-  font-size: clamp(38px, 5vw, 64px);
+  font-size: clamp(38px, 4.4vw, 58px);
   line-height: 1.28;
   letter-spacing: 0.03em;
 }
@@ -363,15 +363,15 @@ button {
 
 .hero__badges {
   position: absolute;
-  top: 50%;
-  right: clamp(20px, 4vw, 72px);
+  top: 152px;
+  right: clamp(28px, 7vw, 120px);
   z-index: 2;
-  display: grid;
-  gap: 24px;
-  transform: translateY(-50%);
+  width: 260px;
+  height: 330px;
 }
 
 .hero-badge {
+  position: absolute;
   display: grid;
   width: 132px;
   height: 132px;
@@ -381,6 +381,16 @@ button {
   color: #fff;
   box-shadow: 0 18px 42px rgba(71, 45, 16, 0.18);
   transform: rotate(45deg);
+}
+
+.hero-badge:nth-child(1) {
+  top: 0;
+  right: 0;
+}
+
+.hero-badge:nth-child(2) {
+  top: 154px;
+  left: 0;
 }
 
 .hero-badge__inner {
@@ -479,10 +489,10 @@ button {
 
 .strength-lead {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
-  gap: 54px;
-  align-items: end;
-  margin-bottom: 42px;
+  gap: 18px;
+  max-width: 760px;
+  margin: 0 auto 44px;
+  text-align: center;
 }
 
 .strength-list {
@@ -547,12 +557,14 @@ button {
 
 .practice-card {
   display: grid;
+  justify-items: center;
   min-height: 250px;
   padding: 30px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: var(--color-surface);
   box-shadow: 0 8px 24px rgba(31, 49, 37, 0.04);
+  text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
@@ -567,6 +579,7 @@ button {
   width: auto;
   height: auto;
   place-items: center;
+  margin-inline: auto;
   margin-bottom: 22px;
   color: var(--color-green-dark);
 }
@@ -589,6 +602,7 @@ button {
 
 .practice-card span:last-child {
   align-self: end;
+  justify-self: center;
   margin-top: 24px;
   color: var(--color-green-dark);
   font-size: 14px;
@@ -645,10 +659,10 @@ button {
 
 .lawyer-mini {
   display: grid;
-  grid-template-columns: 190px 1fr;
+  grid-template-columns: 230px 1fr;
   gap: 28px;
   align-items: center;
-  padding: 24px;
+  padding: 26px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: #fff;
@@ -716,19 +730,22 @@ button {
 .flow-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 0;
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  background: #fff;
-  overflow: hidden;
+  border: 0;
+  background: transparent;
+  overflow: visible;
 }
 
 .flow-list li {
   position: relative;
-  padding: 28px 22px;
+  padding: 32px 24px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(31, 49, 37, 0.04);
   text-align: center;
 }
 
@@ -811,9 +828,9 @@ button {
 
 .site-footer {
   position: relative;
-  padding: 76px 0 34px;
-  background: #b8a684;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 92px 0 50px;
+  background: #ad9a78;
+  color: rgba(255, 255, 255, 0.94);
 }
 
 .footer-top {
@@ -833,36 +850,15 @@ button {
   box-shadow: 0 14px 32px rgba(91, 67, 31, 0.18);
 }
 
-.site-footer__inner {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.65fr) minmax(220px, 0.9fr);
-  gap: 56px;
-  align-items: start;
-}
-
-.site-footer__brand img {
-  width: 210px;
-  height: 64px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  object-fit: contain;
-  object-position: left center;
-  background: #fff;
-}
-
-.site-footer__brand p,
-.site-footer__office p {
-  color: rgba(255, 255, 255, 0.86);
-}
-
 .site-footer__links {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px;
+  grid-template-columns: repeat(3, max-content);
+  align-items: start;
+  justify-content: center;
+  gap: clamp(70px, 10vw, 150px);
 }
 
-.site-footer__links ul,
-.site-footer__bottom-links {
+.site-footer__links ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -870,7 +866,8 @@ button {
 
 .site-footer__links ul {
   display: grid;
-  gap: 11px;
+  align-content: start;
+  gap: 12px;
 }
 
 .site-footer__links a {
@@ -879,6 +876,7 @@ button {
   align-items: center;
   font-weight: 700;
   letter-spacing: 0.03em;
+  line-height: 1.5;
 }
 
 .site-footer__links a::before {
@@ -890,24 +888,9 @@ button {
   content: "";
 }
 
-.site-footer__office strong {
-  display: block;
-  margin-bottom: 10px;
-  color: #fff;
-  font-size: 17px;
-}
-
 .site-footer p,
 .site-footer ul {
   margin: 0;
-}
-
-.site-footer__office .button {
-  width: min(100%, 220px);
-  margin-top: 18px;
-  border-color: rgba(255, 255, 255, 0.76);
-  color: #fff;
-  background: transparent;
 }
 
 .site-footer a {
@@ -918,24 +901,11 @@ button {
   color: #fff;
 }
 
-.site-footer__bottom {
-  display: grid;
-  gap: 22px;
-  align-items: center;
-  justify-items: center;
-  margin-top: 68px;
+.site-footer__copy {
+  margin: 86px 0 0;
+  color: rgba(255, 255, 255, 0.92);
   font-size: 13px;
-}
-
-.site-footer__bottom-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 30px;
-  justify-content: center;
-}
-
-.site-footer__bottom p {
-  color: rgba(255, 255, 255, 0.86);
+  text-align: center;
 }
 
 .sp-fixed-cta {
@@ -1611,12 +1581,8 @@ textarea {
   }
 
   .flow-list li + li {
-    border-left: 0;
+    border-left: 1px solid var(--color-line);
     border-top: 1px solid var(--color-line);
-  }
-
-  .site-footer__inner {
-    grid-template-columns: 1fr;
   }
 
   .site-footer__links {
@@ -1661,7 +1627,7 @@ textarea {
   .hero {
     background:
       linear-gradient(180deg, rgba(248, 248, 244, 0.1) 0%, rgba(248, 248, 244, 0.42) 32%, rgba(248, 248, 244, 0.98) 58%, rgba(248, 248, 244, 1) 100%),
-      url("img/top-img/heroのコピー.jpg") center top / 100% auto no-repeat;
+      url("img/top-img/hero.jpg") center top / 100% auto no-repeat;
   }
 
   .hero__inner {
@@ -1719,14 +1685,17 @@ textarea {
 
   .hero__badges {
     position: static;
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+    height: auto;
     width: 100%;
     margin-top: 18px;
     transform: none;
   }
 
   .hero-badge {
+    position: static;
     width: 100%;
     height: auto;
     min-height: 72px;
@@ -1830,7 +1799,7 @@ textarea {
   }
 
   .site-footer {
-    padding: 62px 0 26px;
+    padding: 68px 0 104px;
   }
 
   .footer-top {
@@ -1840,40 +1809,16 @@ textarea {
     font-size: 16px;
   }
 
-  .site-footer__inner,
   .site-footer__links {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .site-footer__brand img {
-    margin-inline: auto;
-    object-position: center;
-  }
-
-  .site-footer__brand,
-  .site-footer__office {
-    text-align: center;
+    gap: 26px;
+    justify-items: center;
+    text-align: left;
   }
 
   .site-footer__links ul {
-    justify-items: center;
-  }
-
-  .site-footer__bottom {
-    display: grid;
-    justify-items: center;
-    margin-top: 46px;
-  }
-
-  .site-footer__bottom-links {
-    display: grid;
-    gap: 12px;
-    justify-items: center;
-  }
-
-  .site-footer__bottom p {
-    margin-left: 0;
+    width: min(100%, 220px);
+    justify-items: start;
   }
 
   .sp-fixed-cta {
