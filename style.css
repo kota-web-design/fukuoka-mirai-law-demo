@@ -318,11 +318,12 @@ button {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(248, 248, 244, 1) 0%, rgba(248, 248, 244, 0.99) 46%, rgba(248, 248, 244, 0.88) 70%, rgba(248, 248, 244, 0.28) 100%),
-    url("img/top-img/hero.jpg") right -120px center / auto 100% no-repeat;
+    linear-gradient(90deg, rgba(248, 248, 244, 0.92) 0%, rgba(248, 248, 244, 0.82) 36%, rgba(248, 248, 244, 0.42) 58%, rgba(248, 248, 244, 0.1) 100%),
+    url("img/top-img/heroのコピー.jpg") right center / auto 100% no-repeat;
 }
 
 .hero__inner {
+  position: relative;
   display: flex;
   align-items: center;
   width: min(calc(100% - 48px), 1240px);
@@ -332,6 +333,8 @@ button {
 }
 
 .hero__content {
+  position: relative;
+  z-index: 2;
   width: min(100%, 610px);
   padding: 42px 0;
 }
@@ -356,6 +359,61 @@ button {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 34px;
+}
+
+.hero__badges {
+  position: absolute;
+  top: 50%;
+  right: clamp(20px, 4vw, 72px);
+  z-index: 2;
+  display: grid;
+  gap: 24px;
+  transform: translateY(-50%);
+}
+
+.hero-badge {
+  display: grid;
+  width: 132px;
+  height: 132px;
+  place-items: center;
+  border-radius: 30px;
+  background: rgba(176, 139, 76, 0.88);
+  color: #fff;
+  box-shadow: 0 18px 42px rgba(71, 45, 16, 0.18);
+  transform: rotate(45deg);
+}
+
+.hero-badge__inner {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  text-align: center;
+  transform: rotate(-45deg);
+}
+
+.hero-badge svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.hero-badge strong,
+.hero-badge small {
+  display: block;
+  line-height: 1.35;
+}
+
+.hero-badge strong {
+  font-size: 19px;
+}
+
+.hero-badge small {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 /* =========================================================
@@ -456,13 +514,16 @@ button {
 
 .icon-circle svg,
 .practice-card__icon svg {
-  width: 28px;
-  height: 28px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
+}
+
+.icon-circle svg {
+  width: 42px;
+  height: 42px;
 }
 
 .strength-item h3 {
@@ -506,8 +567,13 @@ button {
   width: auto;
   height: auto;
   place-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   color: var(--color-green-dark);
+}
+
+.practice-card__icon svg {
+  width: 38px;
+  height: 38px;
 }
 
 .practice-card h3 {
@@ -579,10 +645,10 @@ button {
 
 .lawyer-mini {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 24px;
+  grid-template-columns: 190px 1fr;
+  gap: 28px;
   align-items: center;
-  padding: 22px;
+  padding: 24px;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   background: #fff;
@@ -593,7 +659,7 @@ button {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-sm);
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 }
 
 .lawyer-mini p,
@@ -744,15 +810,34 @@ button {
 }
 
 .site-footer {
-  padding: 58px 0 20px;
-  background: #173d29;
-  color: rgba(255, 255, 255, 0.78);
+  position: relative;
+  padding: 76px 0 34px;
+  background: #b8a684;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.site-footer__grid {
+.footer-top {
+  position: absolute;
+  top: -28px;
+  right: max(40px, calc((100vw - var(--container)) / 2));
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr 0.8fr 1fr;
-  gap: 42px;
+  width: 74px;
+  height: 74px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-gold);
+  color: #fff;
+  font-family: "Noto Serif JP", serif;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 14px 32px rgba(91, 67, 31, 0.18);
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.65fr) minmax(220px, 0.9fr);
+  gap: 56px;
+  align-items: start;
 }
 
 .site-footer__brand img {
@@ -765,10 +850,51 @@ button {
   background: #fff;
 }
 
-.site-footer h2 {
-  margin: 0 0 16px;
+.site-footer__brand p,
+.site-footer__office p {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.site-footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.site-footer__links ul,
+.site-footer__bottom-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__links ul {
+  display: grid;
+  gap: 11px;
+}
+
+.site-footer__links a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.site-footer__links a::before {
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid rgba(255, 255, 255, 0.82);
+  content: "";
+}
+
+.site-footer__office strong {
+  display: block;
+  margin-bottom: 10px;
   color: #fff;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .site-footer p,
@@ -776,11 +902,12 @@ button {
   margin: 0;
 }
 
-.site-footer ul {
-  display: grid;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
+.site-footer__office .button {
+  width: min(100%, 220px);
+  margin-top: 18px;
+  border-color: rgba(255, 255, 255, 0.76);
+  color: #fff;
+  background: transparent;
 }
 
 .site-footer a {
@@ -791,36 +918,24 @@ button {
   color: #fff;
 }
 
-.footer-contact {
-  padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-md);
-}
-
-.footer-contact__tel {
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.footer-contact .button {
-  width: 100%;
-  margin-top: 16px;
-}
-
 .site-footer__bottom {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 22px;
   align-items: center;
-  margin-top: 44px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  justify-items: center;
+  margin-top: 68px;
   font-size: 13px;
 }
 
+.site-footer__bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+  justify-content: center;
+}
+
 .site-footer__bottom p {
-  margin-left: auto;
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .sp-fixed-cta {
@@ -1500,8 +1615,12 @@ textarea {
     border-top: 1px solid var(--color-line);
   }
 
-  .site-footer__grid {
-    grid-template-columns: 1fr 1fr;
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lawyer-profile,
@@ -1541,14 +1660,15 @@ textarea {
 
   .hero {
     background:
-      linear-gradient(180deg, rgba(248, 248, 244, 0.78) 0%, rgba(248, 248, 244, 0.9) 46%, rgba(248, 248, 244, 0.99) 100%),
-      url("img/top-img/hero.jpg") center top / 100% auto no-repeat;
+      linear-gradient(180deg, rgba(248, 248, 244, 0.1) 0%, rgba(248, 248, 244, 0.42) 32%, rgba(248, 248, 244, 0.98) 58%, rgba(248, 248, 244, 1) 100%),
+      url("img/top-img/heroのコピー.jpg") center top / 100% auto no-repeat;
   }
 
   .hero__inner {
+    display: block;
     gap: 28px;
-    min-height: 560px;
-    padding: 48px 0 56px;
+    min-height: auto;
+    padding: 286px 0 56px;
     text-align: center;
   }
 
@@ -1559,9 +1679,9 @@ textarea {
 
   .hero h1 {
     max-width: 100%;
-    font-size: clamp(28px, 7.4vw, 32px);
+    font-size: clamp(27px, 7.1vw, 31px);
     line-height: 1.45;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     word-break: keep-all;
   }
 
@@ -1595,6 +1715,46 @@ textarea {
   .hero__buttons {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .hero__badges {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin-top: 18px;
+    transform: none;
+  }
+
+  .hero-badge {
+    width: 100%;
+    height: auto;
+    min-height: 72px;
+    padding: 14px 12px;
+    border-radius: var(--radius-md);
+    transform: none;
+  }
+
+  .hero-badge__inner {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    justify-items: center;
+    text-align: center;
+    transform: none;
+  }
+
+  .hero-badge svg {
+    grid-row: auto;
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero-badge strong {
+    font-size: 15px;
+  }
+
+  .hero-badge small {
+    font-size: 13px;
   }
 
   .section-heading,
@@ -1640,7 +1800,7 @@ textarea {
   }
 
   .lawyer-mini {
-    grid-template-columns: 116px 1fr;
+    grid-template-columns: 132px 1fr;
     gap: 16px;
     padding: 18px;
     text-align: left;
@@ -1670,17 +1830,46 @@ textarea {
   }
 
   .site-footer {
-    padding-bottom: 26px;
+    padding: 62px 0 26px;
   }
 
-  .site-footer__grid {
+  .footer-top {
+    right: 20px;
+    width: 62px;
+    height: 62px;
+    font-size: 16px;
+  }
+
+  .site-footer__inner,
+  .site-footer__links {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 28px;
+  }
+
+  .site-footer__brand img {
+    margin-inline: auto;
+    object-position: center;
+  }
+
+  .site-footer__brand,
+  .site-footer__office {
+    text-align: center;
+  }
+
+  .site-footer__links ul {
+    justify-items: center;
   }
 
   .site-footer__bottom {
     display: grid;
-    justify-items: start;
+    justify-items: center;
+    margin-top: 46px;
+  }
+
+  .site-footer__bottom-links {
+    display: grid;
+    gap: 12px;
+    justify-items: center;
   }
 
   .site-footer__bottom p {
