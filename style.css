@@ -2765,6 +2765,21 @@ textarea {
   .contact-method a[href^="tel"] {
     font-size: 28px;
   }
+
+  .contact-method {
+    text-align: center;
+  }
+
+  .contact-form > h2,
+  .lawyer-profile > div > h2,
+  .lawyer-profile > div > .license {
+    text-align: center;
+  }
+
+  .lawyer-profile > div > .role {
+    display: flex;
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 420px) {
