@@ -211,8 +211,8 @@ button {
 }
 
 .site-header__logo img {
-  width: 190px;
-  height: 58px;
+  width: 124px;
+  height: 82px;
   object-fit: contain;
   object-position: left center;
 }
@@ -662,6 +662,16 @@ button {
   margin: 24px auto 0;
 }
 
+.lawyer-summary .section-heading,
+.news-summary .section-heading {
+  text-align: center;
+}
+
+.lawyer-summary .section-heading p,
+.news-summary .section-heading p {
+  margin-inline: auto;
+}
+
 .news-list {
   display: grid;
   border: 1px solid var(--color-line);
@@ -813,7 +823,7 @@ button {
 .cta-panel--lawyers .cta-panel__inner,
 .cta-panel--cases .cta-panel__inner,
 .cta-panel--fee .cta-panel__inner {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.08fr);
   align-items: center;
   justify-items: stretch;
   gap: 0;
@@ -850,7 +860,7 @@ button {
 
 .cta-panel__media {
   height: 100%;
-  min-height: 300px;
+  min-height: 360px;
   margin: 0;
   border-radius: calc(var(--radius-lg) - 6px);
   overflow: hidden;
@@ -859,7 +869,7 @@ button {
 .cta-panel__media img {
   width: 100%;
   height: 100%;
-  min-height: 300px;
+  min-height: 360px;
   object-fit: cover;
   object-position: center center;
 }
@@ -1565,7 +1575,7 @@ button {
 }
 
 .cta-panel--detail .cta-panel__inner {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 0.88fr) minmax(440px, 1.16fr);
   align-items: center;
   justify-items: stretch;
   gap: 0;
@@ -1590,12 +1600,12 @@ button {
 }
 
 .cta-panel--detail .cta-panel__media {
-  min-height: 340px;
+  min-height: 420px;
 }
 
 .cta-panel--detail .cta-panel__media img {
-  min-height: 340px;
-  object-position: center center;
+  min-height: 420px;
+  object-position: 38% center;
 }
 
 .faq-list {
@@ -2017,6 +2027,15 @@ button {
   font-weight: 700;
 }
 
+.contact-method .button,
+.contact-form > .button {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  min-width: 180px;
+  margin-inline: auto;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2227,8 +2246,8 @@ textarea {
   }
 
   .site-header__logo img {
-    width: 172px;
-    height: 50px;
+    width: 104px;
+    height: 69px;
   }
 
   .section {
@@ -2669,7 +2688,8 @@ textarea {
   }
 
   .site-header__logo img {
-    width: 154px;
+    width: 96px;
+    height: 64px;
   }
 
   .container,
