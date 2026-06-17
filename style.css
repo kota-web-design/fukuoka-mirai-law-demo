@@ -2711,9 +2711,25 @@ textarea {
   }
 
   .case-card__head {
-    display: grid;
-    justify-items: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 8px;
+    width: 100%;
+  }
+
+  .case-card__head span {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .case-card__head time {
+    order: 1;
+  }
+
+  .detail-card > h3,
+  .detail-card > p {
+    text-align: center;
   }
 
   .case-card > p {
