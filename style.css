@@ -211,10 +211,8 @@ button {
 }
 
 .site-header__logo img {
-  width: 124px;
-  height: 82px;
-  object-fit: contain;
-  object-position: left center;
+  width: 220px;
+  height: auto;
 }
 
 .site-header__nav {
@@ -2246,8 +2244,8 @@ textarea {
   }
 
   .site-header__logo img {
-    width: 104px;
-    height: 69px;
+    width: 180px;
+    height: auto;
   }
 
   .section {
@@ -2688,8 +2686,8 @@ textarea {
   }
 
   .site-header__logo img {
-    width: 96px;
-    height: 64px;
+    width: 170px;
+    height: auto;
   }
 
   .container,
