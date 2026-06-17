@@ -5,21 +5,27 @@ const menuButton = document.querySelector(".menu-button");
 const mobileNav = document.querySelector(".mobile-nav");
 
 if (menuButton && mobileNav) {
+  const setMenuState = (isOpen) => {
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+    menuButton.classList.toggle("is-open", isOpen);
+    mobileNav.classList.toggle("is-open", isOpen);
+    document.body.classList.toggle("is-menu-open", isOpen);
+  };
+
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    menuButton.classList.toggle("is-open", !isOpen);
-    mobileNav.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("is-menu-open", !isOpen);
+    setMenuState(!isOpen);
   });
 
   mobileNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.classList.remove("is-open");
-      mobileNav.classList.remove("is-open");
-      document.body.classList.remove("is-menu-open");
+      setMenuState(false);
     });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuState(false);
   });
 }
 

@@ -276,35 +276,67 @@ button {
 }
 
 .menu-button {
+  position: relative;
   display: none;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border: 1px solid var(--color-line);
-  border-radius: 12px;
-  background: #fff;
+  width: 52px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-green-dark);
 }
 
 .menu-button span {
+  position: absolute;
+  left: 14px;
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
-  margin: 4px auto;
   border-radius: 999px;
-  background: var(--color-green-dark);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  background: currentColor;
+  transition: top 0.25s ease, left 0.25s ease, width 0.25s ease, transform 0.25s ease;
+}
+
+.menu-button span:nth-child(1) {
+  top: 15px;
+}
+
+.menu-button span:nth-child(2) {
+  display: none;
+}
+
+.menu-button span:nth-child(3) {
+  top: 23px;
+  left: 20px;
+  width: 18px;
+}
+
+.menu-button::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  color: currentColor;
+  content: "MENU";
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .menu-button.is-open span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.menu-button.is-open span:nth-child(2) {
-  opacity: 0;
+  top: 20px;
+  transform: rotate(45deg);
 }
 
 .menu-button.is-open span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  top: 20px;
+  left: 14px;
+  width: 24px;
+  transform: rotate(-45deg);
+}
+
+.menu-button.is-open::after {
+  content: "CLOSE";
 }
 
 .mobile-nav {
@@ -952,10 +984,6 @@ button {
   color: rgba(255, 255, 255, 0.92);
   font-size: 13px;
   text-align: center;
-}
-
-.sp-fixed-cta {
-  display: none;
 }
 
 /* =========================================================
@@ -2158,23 +2186,46 @@ textarea {
     top: var(--header-height);
     right: 0;
     left: 0;
+    z-index: 99;
     display: grid;
     gap: 0;
     max-height: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     border-bottom: 1px solid var(--color-line);
     background: #fff;
-    transition: max-height 0.3s ease;
+    box-shadow: 0 18px 34px rgba(30, 42, 56, 0.12);
+    transition: max-height 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
   }
 
   .mobile-nav.is-open {
     max-height: calc(100vh - var(--header-height));
+    visibility: visible;
   }
 
   .mobile-nav a {
-    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 14px 24px;
     border-top: 1px solid var(--color-line);
     font-weight: 700;
+  }
+
+  .mobile-nav a::after {
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    border-top: 1px solid var(--color-green-dark);
+    border-right: 1px solid var(--color-green-dark);
+    content: "";
+  }
+
+  .mobile-nav a:last-child {
+    background: var(--color-green-soft);
+    color: var(--color-green-dark);
   }
 
   .hero__inner,
@@ -2229,23 +2280,79 @@ textarea {
 
 @media (max-width: 767px) {
   :root {
-    --header-height: 74px;
+    --header-height: 118px;
   }
 
   body {
-    padding-bottom: 68px;
+    padding-bottom: 0;
     font-size: 15px;
   }
 
   .container,
-  .site-header__inner,
   .hero__inner {
     width: min(calc(100% - 32px), var(--container));
+  }
+
+  .site-header__inner {
+    flex-wrap: wrap;
+    gap: 0;
+    width: 100%;
+  }
+
+  .site-header__logo {
+    margin-left: 16px;
   }
 
   .site-header__logo img {
     width: 180px;
     height: auto;
+  }
+
+  .menu-button {
+    margin-right: 12px;
+  }
+
+  .site-header__actions {
+    display: flex;
+    order: 3;
+    flex: 0 0 100%;
+    justify-content: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 0 16px;
+    background: #1b2f4d;
+    color: #fff;
+  }
+
+  .site-header__actions::before {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-right: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.28);
+    color: #e5c98e;
+    content: "ご相談はこちら";
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .site-header__actions .button {
+    display: none;
+  }
+
+  .site-header__tel {
+    gap: 7px;
+    min-height: 44px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .site-header__tel::before {
+    width: 16px;
+    height: 16px;
   }
 
   .section {
@@ -2262,7 +2369,7 @@ textarea {
     display: block;
     gap: 28px;
     min-height: auto;
-    padding: 250px 0 56px;
+    padding: clamp(205px, 58vw, 250px) 0 56px;
     text-align: center;
   }
 
@@ -2453,7 +2560,7 @@ textarea {
   }
 
   .site-footer {
-    padding: 68px 0 104px;
+    padding: 68px 0;
   }
 
   .site-footer .site-footer__copy {
@@ -2477,32 +2584,6 @@ textarea {
   .site-footer__links ul {
     width: min(100%, 220px);
     justify-items: start;
-  }
-
-  .sp-fixed-cta {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 90;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--color-line);
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-  }
-
-  .sp-fixed-cta a {
-    display: grid;
-    min-height: 62px;
-    place-items: center;
-    color: var(--color-green-dark);
-    font-size: 13px;
-    font-weight: 700;
-  }
-
-  .sp-fixed-cta a + a {
-    border-left: 1px solid var(--color-line);
   }
 
   .page-hero,
@@ -2675,6 +2756,12 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
   .contact-method a[href^="tel"] {
     font-size: 28px;
   }
@@ -2682,12 +2769,26 @@ textarea {
 
 @media (max-width: 420px) {
   .site-header__inner {
-    width: calc(100% - 24px);
+    width: 100%;
   }
 
   .site-header__logo img {
     width: 170px;
     height: auto;
+  }
+
+  .site-header__actions {
+    gap: 9px;
+    padding-inline: 12px;
+  }
+
+  .site-header__actions::before {
+    padding-right: 9px;
+    font-size: 10px;
+  }
+
+  .site-header__tel {
+    font-size: 15px;
   }
 
   .container,
