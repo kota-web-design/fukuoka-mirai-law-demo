@@ -31,6 +31,8 @@
 
 html {
   scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -2369,7 +2371,8 @@ textarea {
     display: block;
     gap: 28px;
     min-height: auto;
-    padding: clamp(205px, 58vw, 250px) 0 56px;
+    /* Mobile hero image is 1672 x 941; keep copy safely below it. */
+    padding: calc(56.28vw + 32px) 0 56px;
     text-align: center;
   }
 
