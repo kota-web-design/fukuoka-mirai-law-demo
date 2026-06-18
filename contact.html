@@ -15,41 +15,45 @@
   <meta property="og:title" content="お問い合わせ｜福岡みらい法律事務所">
   <meta property="og:description" content="福岡みらい法律事務所へのお問い合わせ。電話・フォーム・LINEで法律相談のご予約を受け付けています。">
   <meta property="og:url" content="https://kota-web-design.github.io/fukuoka-mirai-law-demo/contact.html">
-  <meta property="og:image" content="https://kota-web-design.github.io/fukuoka-mirai-law-demo/img/ogp.jpg">
+  <meta property="og:image" content="https://kota-web-design.github.io/fukuoka-mirai-law-demo/img/ogp-hero.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="福岡みらい法律事務所の外観と所属弁護士">
+  <meta property="og:image:alt" content="福岡みらい法律事務所の外観、所属弁護士、法律相談のご案内">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=20260618-1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260618-4">
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
   <header class="site-header"><div class="site-header__inner"><a class="site-header__logo" href="index.html"><img src="img/logo-horizontal.jpg" alt="福岡みらい法律事務所" width="1250" height="360"></a><nav class="site-header__nav" aria-label="グローバルナビゲーション"><a href="practice.html">取扱分野</a><a href="lawyers.html">弁護士紹介</a><a href="cases.html">解決事例</a><a href="fee.html">費用について</a><a href="office.html">事務所案内</a></nav><div class="site-header__actions"><a class="site-header__tel" href="tel:0920000000"><span>092-000-0000</span></a><a class="button button--green" href="contact.html">お問い合わせ</a></div><button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button></div><nav class="mobile-nav" id="mobileNav" aria-label="スマートフォンナビゲーション"><a href="index.html">ホーム</a><a href="practice.html">取扱分野</a><a href="lawyers.html">弁護士紹介</a><a href="cases.html">解決事例</a><a href="fee.html">費用について</a><a href="office.html">事務所案内</a><a href="contact.html">お問い合わせ</a></nav></header>
   <main id="main">
     <!-- Page Hero -->
-    <section class="page-hero page-hero--contact page-hero--simple"><div class="container page-hero__inner"><p class="breadcrumb"><a href="index.html">ホーム</a> / お問い合わせ</p><h1>お問い合わせ</h1><p>法律相談のご予約・お問い合わせはこちらから。相談内容がまとまっていなくても大丈夫です。</p></div></section>
+    <section class="page-hero page-hero--contact page-hero--simple"><div class="container page-hero__inner"><p class="breadcrumb"><a href="index.html">ホーム</a> / お問い合わせ</p><h1>お問い合わせ</h1><p>法律相談のご予約・お問い合わせはこちらから。<br>相談内容がまとまっていなくても大丈夫です。</p></div></section>
 
     <!-- Contact -->
     <section class="section">
       <div class="container contact-layout">
         <aside class="contact-side">
-          <div class="contact-method"><h2>お電話でのご相談予約</h2><p>お急ぎの場合や日程調整は、お電話でのご連絡がスムーズです。</p><a href="tel:0920000000">092-000-0000</a><p>受付時間 / 平日 9:00-18:00</p></div>
-          <div class="contact-method" id="line"><h2>LINEでのご相談</h2><p>LINEでの連絡をご希望の場合は、相談フォームのご相談内容欄にその旨をご記入ください。</p><a class="button button--line" href="#contactForm">相談フォームへ進む</a></div>
-          <div class="contact-method contact-method--note"><h2>相談前の準備について</h2><p>内容が整理できていなくても問題ありません。分かる範囲で、現在の状況や相手方とのやり取りをお知らせください。</p></div>
+          <div class="contact-method"><h2>お電話でのご相談予約</h2><p>お急ぎの場合や日程調整は、お電話での<br class="sp-only">ご連絡がスムーズです。</p><a href="tel:0920000000">092-000-0000</a><p>受付時間 / 平日 9:00-18:00</p></div>
+          <div class="contact-method" id="line"><h2>LINEでのご相談</h2><p>LINEでの連絡をご希望の場合は、<br class="sp-only">相談フォームのご相談内容欄に<br class="sp-only">その旨をご記入ください。</p><a class="button button--line" href="#contactForm">相談フォームへ進む</a></div>
+          <div class="contact-method contact-method--note"><h2>相談前の準備について</h2><p>内容が整理できていなくても<br class="sp-only">問題ありません。<br>分かる範囲で、現在の状況や相手方との<br class="sp-only">やり取りをお知らせください。</p></div>
         </aside>
-        <form class="contact-form" id="contactForm" method="post" novalidate>
+        <form class="contact-form" id="contactForm" method="post" novalidate aria-describedby="formIntro formDemoNote">
           <h2>相談フォーム</h2>
-          <p>必須項目をご入力ください。内容を確認後、担当者よりご連絡します。まずは概要だけでも大丈夫です。</p>
+          <p id="formIntro">必須項目をご入力ください。<br>入力とバリデーションを確認できるデモフォームです。<br>まずは概要だけでも大丈夫です。</p>
+          <p class="form-demo-note" id="formDemoNote"><strong>ポートフォリオ用デモのため、入力内容は実際には送信されません。</strong></p>
           <div class="form-grid">
-            <label>お名前 <span>必須</span><input type="text" name="name" placeholder="例）田中 一郎" required></label>
-            <label>電話番号 <span>必須</span><input type="tel" name="tel" placeholder="例）090-1234-5678" required></label>
-            <label class="wide">メールアドレス <span>必須</span><input type="email" name="email" placeholder="例）example@mail.com" required></label>
+            <label>お名前 <span>必須</span><input type="text" name="name" autocomplete="name" placeholder="例）田中 一郎" required></label>
+            <label>電話番号 <span>必須</span><input type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="例）090-1234-5678" required></label>
+            <label class="wide">メールアドレス <span>必須</span><input type="email" name="email" autocomplete="email" inputmode="email" placeholder="例）example@mail.com" required></label>
             <label class="wide">相談分野<select name="category"><option>選択してください</option><option>相続・遺言</option><option>離婚・男女問題</option><option>交通事故</option><option>債務整理</option><option>労働問題</option><option>顧問契約</option><option>その他</option></select></label>
             <label class="wide">ご相談内容 <span>必須</span><textarea name="message" rows="7" placeholder="現在の状況や相談したい内容をご入力ください。" required></textarea></label>
           </div>
-          <label class="privacy-check"><input type="checkbox" required> <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する</label>
-          <button class="button button--green" type="submit">送信する</button>
+          <label class="privacy-check"><input type="checkbox" name="privacy_consent" value="agreed" required> <a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</label>
+          <button class="button button--green" type="submit">送信をテストする</button>
         </form>
       </div>
     </section>
@@ -79,8 +83,9 @@
         <li><a href="office.html">アクセス</a></li>
       </ul>
     </nav>
+    <p class="site-footer__demo-note">※ 本サイトは、架空の法律事務所を想定して制作したポートフォリオ用デモサイトです。実在の人物・団体とは関係ありません。</p>
     <p class="site-footer__copy">&copy; Fukuoka Mirai Law Office All Rights Reserved.</p>
   </footer>
-  <script src="script.js?v=20260617-2"></script>
+  <script src="script.js?v=20260618-3"></script>
 </body>
 </html>
