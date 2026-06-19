@@ -937,6 +937,39 @@ button {
   box-shadow: 0 14px 32px rgba(31, 49, 37, 0.22);
 }
 
+.site-footer__identity {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-footer__brand {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.site-footer__identity p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 20px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.site-footer__identity p a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .site-footer__links {
   display: grid;
   grid-template-columns: repeat(3, max-content);
@@ -2068,6 +2101,10 @@ button {
   padding: 28px;
 }
 
+.contact-form {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
 .contact-method--note {
   background: linear-gradient(180deg, #fff 0%, var(--color-green-soft) 100%);
 }
@@ -2226,7 +2263,7 @@ textarea {
 /* =========================================================
   Responsive
 ========================================================= */
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .site-header__nav,
   .site-header__actions {
     display: none;
@@ -2282,6 +2319,9 @@ textarea {
     background: var(--color-green-soft);
     color: var(--color-green-dark);
   }
+}
+
+@media (max-width: 1080px) {
 
   .hero__inner,
   .strength-lead,
@@ -2630,6 +2670,26 @@ textarea {
     padding: 68px 0;
   }
 
+  .site-footer__identity {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    text-align: center;
+  }
+
+  .site-footer__identity p {
+    display: grid;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .site-footer__brand {
+    justify-self: center;
+    text-align: center;
+  }
+
   .site-footer .site-footer__copy {
     margin-top: 48px;
   }
@@ -2822,6 +2882,100 @@ textarea {
 
   .fee-highlight span {
     justify-self: center;
+  }
+
+  .table-wrap {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .fee-table {
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .fee-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .fee-table,
+  .fee-table tbody,
+  .fee-table tr,
+  .fee-table th,
+  .fee-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .fee-table tbody {
+    display: grid;
+    gap: 16px;
+  }
+
+  .fee-table tbody tr {
+    overflow: hidden;
+    padding: 0 20px 14px;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .fee-table tbody th,
+  .fee-table tbody tr:hover th {
+    width: auto;
+    margin: 0 -20px 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--color-line);
+    background: var(--color-green-soft);
+    color: var(--color-green-dark);
+    font-size: 17px;
+  }
+
+  .fee-table tbody td,
+  .fee-table tbody tr:hover td {
+    display: grid;
+    grid-template-columns: minmax(76px, 0.7fr) minmax(0, 1.3fr);
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-line);
+    background: #fff;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .fee-table tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  .fee-table tbody td::before {
+    color: var(--color-green-dark);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .fee-table tbody td:nth-child(2)::before {
+    content: "着手金";
+  }
+
+  .fee-table tbody td:nth-child(3)::before {
+    content: "報酬金";
+  }
+
+  .fee-table tbody td:nth-child(4)::before {
+    content: "備考";
   }
 
   .form-grid {
